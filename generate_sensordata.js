@@ -14,11 +14,11 @@
       return open.call(this, method, url, ...rest)
     };
     G.XMLHttpRequest.prototype.send = function(body) {
+      this.setRequestHeader("Access-Control-Allow-Origin", "*")
       if (_method.toUpperCase() === 'POST') {
         console.log('POST →', _url, body);
         debugger;
         if (_url == "https://link-imapi.link-tst.numerator.tech/v1/collect") {
-          this.setRequestHeader("Access-Control-Allow-Origin", "*")
           sensor_data = JSON.parse(body).sensor_data
           browser_type = "Chrome"
           browser_version = "144.0.0.0"
