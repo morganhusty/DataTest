@@ -15,6 +15,8 @@
     };
     G.XMLHttpRequest.prototype.send = function(body) {
       this.setRequestHeader("Access-Control-Allow-Origin", "*")
+      this.setRequestHeader("Access-Control-Request-Method", "*")
+
       if (_method.toUpperCase() === 'POST') {
         console.log('POST →', _url, body);
         debugger;
